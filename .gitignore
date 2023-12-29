@@ -1,6 +1,8 @@
 # TEMP
 data/
 data*/
+_data/
+_data*/
 .joblib_cache/
 .joblib_cache*/
 
@@ -8,6 +10,7 @@ data*/
 .vscode/
 log/
 *.log
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

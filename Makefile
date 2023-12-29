@@ -9,8 +9,20 @@ clean:
 run:
 	source venv/bin/activate ; PYTHONPATH='./src' python -m app reqarg1
 
+jupyter:
+	source venv/bin/activate; PYTHONPATH='./src' jupyter lab
+
+black-check:
+	source venv/bin/activate ; black src --check --verbose --line-length 120
+
 black:
-	source venv/bin/activate ; black --line-length 120 .
+	source venv/bin/activate ; black src --line-length 120
+
+ruff-check:
+	source venv/bin/activate ; ruff check .
+
+ruff:
+	source venv/bin/activate ; ruff check . --fix
 
 test:
 	source venv/bin/activate ; PYTHONPATH='./src' pytest -vv --capture=no tests
