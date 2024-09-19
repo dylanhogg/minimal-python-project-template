@@ -1,31 +1,38 @@
 venv:
-	python3 -m venv venv
-	source venv/bin/activate ; pip install --upgrade pip ; python3 -m pip install -r requirements-dev.txt
-	source venv/bin/activate ; pip freeze > requirements_freeze.txt
+	# Install uv on macOS and Linux:
+	# $ curl -LsSf https://astral.sh/uv/install.sh | sh
+	uv venv
+	uv pip install -r requirements-dev.txt
+
+# venv:
+# 	python3 -m venv .venv
+# 	source .venv/bin/activate ; pip install --upgrade pip ; python3 -m pip install -r requirements-dev.txt
+# 	source .venv/bin/activate ; pip freeze > requirements_freeze.txt
 
 clean:
-	rm -rf venv
+	rm -rf .venv
 
 run:
-	source venv/bin/activate ; PYTHONPATH='./src' python -m app reqarg1
+	# source .venv/bin/activate ; PYTHONPATH='./src' python -m app reqarg1
+	uv run src/app.py reqarg1
 
 jupyter:
-	source venv/bin/activate; PYTHONPATH='./src' jupyter lab
+	source .venv/bin/activate; PYTHONPATH='./src' jupyter lab
 
 black-check:
-	source venv/bin/activate ; black src --check --verbose --line-length 120
+	source .venv/bin/activate ; black src --check --verbose --line-length 120
 
 black:
-	source venv/bin/activate ; black src --line-length 120
+	source .venv/bin/activate ; black src --line-length 120
 
 ruff-check:
-	source venv/bin/activate ; ruff check .
+	source .venv/bin/activate ; ruff check .
 
 ruff:
-	source venv/bin/activate ; ruff check . --fix
+	source .venv/bin/activate ; ruff check . --fix
 
 test:
-	source venv/bin/activate ; PYTHONPATH='./src' pytest -vv --capture=no tests
+	source .venv/bin/activate ; PYTHONPATH='./src' pytest -vv --capture=no tests
 
 .DEFAULT_GOAL := help
 .PHONY: help
