@@ -1,3 +1,4 @@
 loguru
 python-dotenv
 typer
+pydantic

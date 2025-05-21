@@ -1,6 +1,6 @@
 ---
 description: Guidelines and best practices for writing Python code files in Cursor.
-globs: *.py
+globs: **/*.py
 alwaysApply: false
 ---
 
@@ -8,6 +8,7 @@ alwaysApply: false
 
 - Use `typer` for building CLI applications
 - Use `loguru` for all logging needs
+- Use `pydantic` for data models and validation
 - Use `python-dotenv` for environment variable management
 - Use `black` or `ruff` for code formatting
 - Use `pytest` for unit and integration tests
