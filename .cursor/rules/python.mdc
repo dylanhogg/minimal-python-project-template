@@ -4,7 +4,7 @@ globs: **/*.py
 alwaysApply: false
 ---
 
-## Core Libraries
+## Core Python Libraries to Use
 
 - Use `typer` for building CLI applications
 - Use `loguru` for all logging needs
@@ -13,19 +13,31 @@ alwaysApply: false
 - Use `black` or `ruff` for code formatting
 - Use `pytest` for unit and integration tests
 
-## Preferred Libraries
+## Preferred Python Libraries when Appropriate
 
 - Use `pandas` for data processing
-- Use `fastapi` for REST endpoints
-- Use `uvicorn` as an ASGI web server 
+- Use `numpy` for scientific computing
+- Use `fastapi` for REST API endpoints
+- Use `uvicorn` as an ASGI web server (and `uvloop` if approprite)
 - Use `pytorch` for machine learning
 - Use `transformers` for nlp, llms, and models
 - Use `jupyterlab` for notebooks
-- Use `streamlit` for demos
+- Use `streamlit` for demo apps
+- Use `tenacity` for retrying function calls
+- Use `rich` for formatting terminal output
+- Use `arrow` for date and time conversions
+- Use `requests` or `httpx` for HTTP communications
 
-## Guidelines
+## Other Python Libraries to Consider
 
-- Keep sensitive information in .env files
+- Fall back to `scikit-learn` for machine learning if pytorch cannot be used
+- Consider `joblib.Memory` for complex caching when `@functools.cache` is insufficient
+- Consider `joblib.Parallel` for concurrency when appropriate
+- Use `sqlalchemy` for SQL ORM when appropriate
+
+## Python Coding Guidelines
+
+- Keep sensitive information in `.env` files
 - Keep functions small and focused on a single responsibility
 - Use type hints for all function parameters and return values
 - Provide meaningful error messages
@@ -34,7 +46,9 @@ alwaysApply: false
 - Do not over-engineer solutions - strive for simplicity and maintainability while being efficient
 - Keep docstrings minimal, prefer the code to speak for itself
 - Leverage `async` and `await` for I/O-bound operations to maximize concurrency
-- Apply `@cache` caching where appropriate
+- Leverage `asyncio` as an event-loop framework when appropriate
+- Apply decorator `@functools.cache` function caching where appropriate
+- For any pandas data pipelines, prefer chainable functions with `DataFrame.pipe(func, ...)`
 
 ## Tests
 
@@ -46,11 +60,8 @@ alwaysApply: false
 - Keep source code in a `src` directory
 - Place tests in a `tests` directory
 - Keep configuration files in the root directory
-
-## Data Processing
-
-- Prefer `pandas` and `numpy`
-- 
-
+- Manage core packages via `requirements.txt`
+- Manage dev packages via `requirements-dev.txt`
+- Package management is via `uv`
 
 
