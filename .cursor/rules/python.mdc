@@ -1,0 +1,55 @@
+---
+description: Guidelines and best practices for writing Python code files in Cursor.
+globs: *.py
+alwaysApply: false
+---
+
+## Core Libraries
+
+- Use `typer` for building CLI applications
+- Use `loguru` for all logging needs
+- Use `python-dotenv` for environment variable management
+- Use `black` or `ruff` for code formatting
+- Use `pytest` for unit and integration tests
+
+## Preferred Libraries
+
+- Use `pandas` for data processing
+- Use `fastapi` for REST endpoints
+- Use `uvicorn` as an ASGI web server 
+- Use `pytorch` for machine learning
+- Use `transformers` for nlp, llms, and models
+- Use `jupyterlab` for notebooks
+- Use `streamlit` for demos
+
+## Guidelines
+
+- Keep sensitive information in .env files
+- Keep functions small and focused on a single responsibility
+- Use type hints for all function parameters and return values
+- Provide meaningful error messages
+- Keep README.md up to date
+- Document all configuration options
+- Do not over-engineer solutions - strive for simplicity and maintainability while being efficient
+- Keep docstrings minimal, prefer the code to speak for itself
+- Leverage `async` and `await` for I/O-bound operations to maximize concurrency
+- Apply `@cache` caching where appropriate
+
+## Tests
+
+- Follow the naming convention: test_*.py
+- Use fixtures for test setup and teardown
+
+## Project Structure
+
+- Keep source code in a `src` directory
+- Place tests in a `tests` directory
+- Keep configuration files in the root directory
+
+## Data Processing
+
+- Prefer `pandas` and `numpy`
+- 
+
+
+

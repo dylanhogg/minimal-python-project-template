@@ -12,3 +12,5 @@ Uses the following 3rd party libraries:
 - DEV - https://github.com/pytest-dev/pytest - makes it easy to write small tests, yet scales to support complex functional testing
 
 See Makefile for quick utility commands for creation of venv, running the app, running tests etc.
+
+Includes mdc cursorrule files in `.cursor/rules`as per https://docs.cursor.com/context/rules
