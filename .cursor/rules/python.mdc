@@ -49,6 +49,7 @@ alwaysApply: false
 - Leverage `asyncio` as an event-loop framework when appropriate
 - Apply decorator `@functools.cache` function caching where appropriate
 - For any pandas data pipelines, prefer chainable functions with `DataFrame.pipe(func, ...)`
+- Use f-strings for string formatting, and prefer the f"{var=}" syntax to show the variable name and its value
 
 ## Tests
 
