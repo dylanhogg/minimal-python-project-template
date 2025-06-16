@@ -1,0 +1,67 @@
+---
+description: Guidelines and best practices for writing Python code files in Cursor.
+globs: **/*.py
+alwaysApply: false
+---
+
+## Core Python Libraries to Use
+
+- Use `typer` for building CLI applications
+- Use `loguru` for all logging needs
+- Use `pydantic` for data models and validation
+- Use `python-dotenv` for environment variable management
+- Use `black` or `ruff` for code formatting
+- Use `pytest` for unit and integration tests
+
+## Preferred Python Libraries when Appropriate
+
+- Use `pandas` for data processing
+- Use `numpy` for scientific computing
+- Use `fastapi` for REST API endpoints
+- Use `uvicorn` as an ASGI web server (and `uvloop` if approprite)
+- Use `pytorch` for machine learning
+- Use `transformers` for nlp, llms, and models
+- Use `jupyterlab` for notebooks
+- Use `streamlit` for demo apps
+- Use `tenacity` for retrying function calls
+- Use `rich` for formatting terminal output
+- Use `arrow` for date and time conversions
+- Use `requests` or `httpx` for HTTP communications
+
+## Other Python Libraries to Consider
+
+- Fall back to `scikit-learn` for machine learning if pytorch cannot be used
+- Consider `joblib.Memory` for complex caching when `@functools.cache` is insufficient
+- Consider `joblib.Parallel` for concurrency when appropriate
+- Use `sqlalchemy` for SQL ORM when appropriate
+
+## Python Coding Guidelines
+
+- Keep sensitive information in `.env` files
+- Keep functions small and focused on a single responsibility
+- Use type hints for all function parameters and return values
+- Provide meaningful error messages
+- Keep README.md up to date
+- Document all configuration options
+- Do not over-engineer solutions - strive for simplicity and maintainability while being efficient
+- Keep docstrings minimal, prefer the code to speak for itself
+- Leverage `async` and `await` for I/O-bound operations to maximize concurrency
+- Leverage `asyncio` as an event-loop framework when appropriate
+- Apply decorator `@functools.cache` function caching where appropriate
+- For any pandas data pipelines, prefer chainable functions with `DataFrame.pipe(func, ...)`
+- Use f-strings for string formatting, and prefer the f"{var=}" syntax to show the variable name and its value
+
+## Tests
+
+- Follow the naming convention: test_*.py
+- Use fixtures for test setup and teardown
+
+## Project Structure
+
+- Keep source code in a `src` directory
+- Place tests in a `tests` directory
+- Keep configuration files in the root directory
+- Manage core packages via `requirements.txt`
+- Manage dev packages via `requirements-dev.txt`
+- Package management is via `uv`
+
