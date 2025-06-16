@@ -14,4 +14,4 @@ Uses the following 3rd party libraries:
 
 See Makefile for quick utility commands for creation of venv, running the app, running tests etc.
 
-Includes mdc cursorrule files in `.cursor/rules`as per https://docs.cursor.com/context/rules
+Includes project cursor rule files in `.cursor/rules`as per https://docs.cursor.com/context/rules
