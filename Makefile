@@ -9,6 +9,9 @@ venv:
 # 	source .venv/bin/activate ; pip install --upgrade pip ; python3 -m pip install -r requirements-dev.txt
 # 	source .venv/bin/activate ; pip freeze > requirements_freeze.txt
 
+which-python:
+	source .venv/bin/activate ; which python
+
 clean:
 	rm -rf .venv
 

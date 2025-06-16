@@ -65,4 +65,3 @@ alwaysApply: false
 - Manage dev packages via `requirements-dev.txt`
 - Package management is via `uv`
 
-
