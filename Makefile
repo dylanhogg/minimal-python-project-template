@@ -1,3 +1,6 @@
+.EXPORT_ALL_VARIABLES:
+DEV=True
+
 venv:
 	# Install uv on macOS and Linux:
 	# $ curl -LsSf https://astral.sh/uv/install.sh | sh
