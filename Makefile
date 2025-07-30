@@ -1,16 +1,16 @@
 .EXPORT_ALL_VARIABLES:
 DEV=True
 
-venv:
-	# Install uv on macOS and Linux:
-	# $ curl -LsSf https://astral.sh/uv/install.sh | sh
-	uv venv
-	uv pip install -r requirements-dev.txt
-
 # venv:
-# 	python3 -m venv .venv
-# 	source .venv/bin/activate ; pip install --upgrade pip ; python3 -m pip install -r requirements-dev.txt
-# 	source .venv/bin/activate ; pip freeze > requirements_freeze.txt
+# 	# Install uv on macOS and Linux:
+# 	# $ curl -LsSf https://astral.sh/uv/install.sh | sh
+# 	uv venv
+# 	uv pip install -r requirements-dev.txt
+
+venv:
+	python3 -m venv .venv
+	source .venv/bin/activate ; pip install --upgrade pip ; python3 -m pip install -r requirements-dev.txt
+	source .venv/bin/activate ; pip freeze > requirements_freeze.txt
 
 which-python:
 	source .venv/bin/activate ; which python
@@ -19,8 +19,8 @@ clean:
 	rm -rf .venv
 
 run:
-	# source .venv/bin/activate ; PYTHONPATH='./src' python -m app reqarg1
-	uv run src/app.py reqarg1
+	# uv run src/app.py reqarg1
+	source .venv/bin/activate ; PYTHONPATH='./src' python -m app reqarg1
 
 jupyter:
 	source .venv/bin/activate; PYTHONPATH='./src' jupyter lab
